@@ -15,7 +15,7 @@ class PowerLaw():
         x = np.sort(x)
         
         ## Based on "POWER-LAW DISTRIBUTIONS IN EMPIRICAL DATA"
-        # Aaron Clauset et al
+        ## Aaron Clauset et al
         n = len(x)
         
         ## Estimate xmin by maximising the 2 sample Kolmogorov-Smirnov test
@@ -30,11 +30,3 @@ class PowerLaw():
             l = -n*np.log(zeta(a,q=x[x_min]))-a*np.sum([np.log(x[i]) for i in range(x_min,n)])
             return -l
         self._alpha = minimize_scalar(lambda a: L(a, x, self._xmin, n)).x
-
-# quick and dity test
-if __name__ == '__main__':
-    x = np.random.zipf(3,5000)
-    pl = PowerLaw()
-    pl.fit(x)
-    print(pl._alpha)
-    print(pl._xmin)
