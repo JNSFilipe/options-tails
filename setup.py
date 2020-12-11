@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
     Setup file for options_tails.
     Use setup.cfg to configure your project.

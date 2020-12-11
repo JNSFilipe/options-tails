@@ -3,6 +3,9 @@ import numpy as np
 from PowerLaw import PowerLaw
 from scipy.stats.norm import cdf
 
+__author__ = "JNSFilipe"
+__copyright__ = "JNSFilipe"
+__license__ = "mit"
 
 class OptionsPricer():
     def __init__(self, hist_returns, power_law=False):

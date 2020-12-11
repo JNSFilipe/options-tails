@@ -4,6 +4,10 @@ from scipy.special import zeta
 from scipy.stats import ks_2samp
 from scipy.optimize import minimize_scalar, brute
 
+__author__ = "JNSFilipe"
+__copyright__ = "JNSFilipe"
+__license__ = "mit"
+
 class PowerLaw():
     def __init__(self):
         self._alpha = np.nan
