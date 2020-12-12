@@ -98,7 +98,3 @@ class OptionsPricer():
         P = (K/K_anchor)**(1-alpha)*P_anchor
         
         return P
-
-
-#%%
-import yfinance as yf
