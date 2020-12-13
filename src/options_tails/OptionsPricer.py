@@ -90,9 +90,14 @@ class OptionsPricer():
             elif options == 'puts':
                 opt = opt.puts
 
-            #TODO
-            # instead of hoping that the exact strike exists, compute nearest strike to get P_anchor and adjust K_anchor accordingly
-            P_anchor = opt[opt['strike']==K_anchor].lastPrice.values[0]
+            # Compute index of closest strike price in market
+            anchor_idx = opt['strike'].sub(K_anchor).abs().idxmin()
+
+            # Update anchor strike
+            K_anchor = opt.iloc[anchor_idx]['strike']
+
+            # Get las price from contract
+            P_anchor = opt.iloc[anchor_idx]['lastPrice']
             
         #l = ((alpha-1)*S*P_anchor**(1-alpha))**(1/alpha)
         P = (K/K_anchor)**(1-alpha)*P_anchor
