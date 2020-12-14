@@ -87,7 +87,7 @@ class OptionsPricer():
             # Chose between calls and puts
             if option == 'calls':
                 opt = opt.calls
-            elif options == 'puts':
+            elif option == 'puts':
                 opt = opt.puts
 
             # Compute index of closest strike price in market
@@ -96,7 +96,7 @@ class OptionsPricer():
             # Update anchor strike
             K_anchor = opt.iloc[anchor_idx]['strike']
 
-            # Get las price from contract
+            # Get last price from contract
             P_anchor = opt.iloc[anchor_idx]['lastPrice']
             
         #l = ((alpha-1)*S*P_anchor**(1-alpha))**(1/alpha)
